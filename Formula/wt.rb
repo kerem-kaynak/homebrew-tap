@@ -1,8 +1,8 @@
 class Wt < Formula
   desc "Git worktrees that set themselves up. One shell function"
   homepage "https://github.com/kerem-kaynak/wt"
-  url "https://github.com/kerem-kaynak/wt/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "e7ec781aa1341726c5c68d90449a0db768b298fc7936bed643d0331885067bd4"
+  url "https://github.com/kerem-kaynak/wt/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "ebd7dfb647f6e438bdf0a5556f077803102547f28f3fe36932b1fcda46d8f23a"
   license "MIT"
 
   def install
