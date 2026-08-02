@@ -1,8 +1,8 @@
 class Wt < Formula
   desc "Git worktrees that set themselves up. One shell function"
   homepage "https://github.com/kerem-kaynak/wt"
-  url "https://github.com/kerem-kaynak/wt/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "ebd7dfb647f6e438bdf0a5556f077803102547f28f3fe36932b1fcda46d8f23a"
+  url "https://github.com/kerem-kaynak/wt/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "e70675915d746bf4ce462b98d7c78d1adf7f6471dd01f46956e63c9132d388c7"
   license "MIT"
 
   def install
@@ -35,6 +35,6 @@ class Wt < Formula
 
   test do
     output = shell_output("bash -c 'source #{pkgshare}/wt.sh && wt --help' 2>&1", 1)
-    assert_match "usage: wt", output
+    assert_match "wt cd <match>", output
   end
 end
