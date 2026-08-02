@@ -1,16 +1,17 @@
 class Pier < Formula
   desc "Give every agent session its own VM. One command up, zero burn when idle"
   homepage "https://github.com/kerem-kaynak/pier"
-  url "https://github.com/kerem-kaynak/pier/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "61cb4f137cdedab23adce51685c5ea13c21c2c8eaccd7129b64086961157a106"
+  url "https://github.com/kerem-kaynak/pier/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "171a4e8277adcfb6ba6418fddf47931c8d9a780551803c02711d16c3a5811dfa"
   license "MIT"
   head "https://github.com/kerem-kaynak/pier.git", branch: "main"
 
   depends_on "go" => :build
 
   def install
-    # make cross-compiles the in-VM supervisors and embeds them into the CLI
-    system "make", "build"
+    # make cross-compiles the in-VM supervisors and embeds them into the CLI;
+    # the tarball has no .git, so the version is passed in
+    system "make", "build", "VERSION=v#{version}"
     bin.install "pier"
     pkgshare.install "skills"
     doc.install "README.md"
@@ -36,6 +37,6 @@ class Pier < Formula
   end
 
   test do
-    assert_match "pier", shell_output("#{bin}/pier help")
+    assert_match version.to_s, shell_output("#{bin}/pier version")
   end
 end
