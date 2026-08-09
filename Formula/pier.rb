@@ -1,8 +1,8 @@
 class Pier < Formula
   desc "Give every agent session its own VM. One command up, zero burn when idle"
   homepage "https://github.com/kerem-kaynak/pier"
-  url "https://github.com/kerem-kaynak/pier/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "69026e2809bca078cc67fc8b7aca4dcc828eb67ff47a268b21062c8a9c05a9e4"
+  url "https://github.com/kerem-kaynak/pier/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "4e2b201ad3a6b8dc62ac8e24014069fba0beead07f68372a7687169ac6f2fadc"
   license "MIT"
   head "https://github.com/kerem-kaynak/pier.git", branch: "main"
 
@@ -19,11 +19,15 @@ class Pier < Formula
 
   def caveats
     <<~EOS
-      pier drives your own AWS account through the aws CLI, which it needs
-      on PATH along with the SSM Session Manager plugin:
+      pier drives your own AWS or GCP account through that cloud's CLI,
+      which it needs on PATH:
 
         brew install awscli
         brew install --cask session-manager-plugin
+
+      or:
+
+        brew install --cask gcloud-cli
 
       Then run once:
 
