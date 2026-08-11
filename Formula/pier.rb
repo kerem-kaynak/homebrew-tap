@@ -1,10 +1,14 @@
 class Pier < Formula
   desc "Give every agent session its own VM. One command up, zero burn when idle"
-  homepage "https://github.com/kerem-kaynak/pier"
-  url "https://github.com/kerem-kaynak/pier/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "a1a02aa59b566d5406955175eb8798ec85fa6ad1a8a9d4f4da66b4e2e15f439b"
+  homepage "https://github.com/usepier/pier"
+  url "https://github.com/usepier/pier/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "3fde12d112a45e402f8537492018a385211d9281ea08a2e85779512fb2d04a9f"
   license "MIT"
-  head "https://github.com/kerem-kaynak/pier.git", branch: "main"
+  head "https://github.com/usepier/pier.git", branch: "main"
+
+  # pier moved to the usepier org; this copy tracks it one last time so
+  # existing installs upgrade cleanly, then nudges everyone to the new tap
+  deprecate! date: "2026-08-11", because: "has moved to usepier/tap/pier — run `brew untap kerem-kaynak/tap && brew install usepier/tap/pier` (keep the tap and just reinstall pier if you also use wt)"
 
   depends_on "go" => :build
 
