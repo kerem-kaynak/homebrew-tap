@@ -9,7 +9,7 @@ class Mtok < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/mtok"
+    system "go", "build", *std_go_args, "./cmd/mtok"
   end
 
   test do
